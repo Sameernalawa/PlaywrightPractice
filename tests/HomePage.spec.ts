@@ -18,7 +18,7 @@ test("Verify log is visible",async ({page}) =>{
 test("Verify navigation links",async ({page}) =>{
     
     const expected_Links = ["HOME","AIFF","AFC","FIFA EVENTS",
-   "LIVE",
+   
    "ORIGINALS",
    "FIFA ARCHIVE"];
     await page.goto("https://www.plus.fifa.com/en/?gl=in");
