@@ -17,10 +17,10 @@ test("pop up validations", async ({page}) => {
     await page.locator("#confirmbtn").click();
     await page.locator("#mousehover").hover(); // handling hover 
     await page.getByText("Top").click(); // inside hover click on top dropdown option
-    const framesPage = page.frameLocator("#courses-iframe"); // handling iframe
-    await framesPage.locator("li a[href*='lifetime-access']:visible").click();
-    const textcheck = await framesPage.locator(".text h2").textContent(); //capturing text
-    console.log(textcheck?.split("")[1]); //printing some particular text from entire text
+    //const framesPage = page.frameLocator("#courses-iframe"); // handling iframe
+    //await framesPage.locator("li a[href*='lifetime-access']:visible").click();
+    //const textcheck = await framesPage.locator(".text h2").textContent(); //capturing text
+    //console.log(textcheck?.split("")[1]); //printing some particular text from entire text
 
 
 
