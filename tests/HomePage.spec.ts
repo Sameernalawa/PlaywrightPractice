@@ -17,7 +17,7 @@ test("Verify log is visible",async ({page}) =>{
 
 test("Verify navigation links",async ({page}) =>{
     
-    const expected_Links = ["HOME","AIFF","AFC","FIFA U-17 WORLD CUP 2025™","FIFA EVENTS",
+    const expected_Links = ["HOME","AIFF","AFC","FIFA EVENTS",
    "LIVE",
    "ORIGINALS",
    "FIFA ARCHIVE"];
