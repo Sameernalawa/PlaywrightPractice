@@ -1,5 +1,6 @@
 // in this file hidden display aleart mousehover topics are covered
-
+// test fils will trigger parallel
+// individual test case in the file will run sequentially
 import {test, expect} from '@playwright/test';
 
 

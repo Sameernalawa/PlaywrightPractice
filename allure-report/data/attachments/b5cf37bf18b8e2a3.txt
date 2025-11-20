@@ -1,0 +1,6 @@
+getByText('Success! The Form has been submitted successfully!.')
+Form submitted successfully
+locator('.card')
+Added : ${producttName} to cart
+₹. 50000
+₹. 50000

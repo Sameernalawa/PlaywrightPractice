@@ -1,0 +1,9 @@
+[
+  'HOME',
+  'AIFF',
+  'AFC',
+  'FIFA U-17 WORLD CUP 2025™',
+  'LIVE',
+  'ORIGINALS',
+  'FIFA ARCHIVE'
+]

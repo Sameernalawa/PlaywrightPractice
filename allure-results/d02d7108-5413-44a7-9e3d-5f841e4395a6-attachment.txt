@@ -1,0 +1,5 @@
+consult
+Text content on new page:  Please email us at mentor@rahulshettyacademy.com with below template to receive response 
+Extracted domain:  rahulshettyacademy.com
+Username input value: rahulshettyacademy.com
+Login attempted.
