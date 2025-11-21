@@ -1,6 +1,6 @@
 package buildTypes
 
-import jetbrains.buildServer.configs.kotlin.v2025_07.*
+import jetbrains.buildServer.configs.kotlin.*
 
 class PlaywrightTests : BuildType({
     name = "Playwright Tests"

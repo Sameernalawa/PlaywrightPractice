@@ -1,4 +1,4 @@
-import jetbrains.buildServer.configs.kotlin.v2025_07.*
+import jetbrains.buildServer.configs.kotlin.*
 
 import buildTypes.PlaywrightTests
 
