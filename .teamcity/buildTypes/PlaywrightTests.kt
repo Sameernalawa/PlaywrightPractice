@@ -1,30 +1,19 @@
-package buildTypes
-
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
 
 object PlaywrightTests : BuildType({
     name = "Run Playwright Tests"
 
-    vcs {
-        root(DslContext.settingsRoot)   // auto-uses your repository
-    }
-
     steps {
         script {
-            name = "Install dependencies"
-            scriptContent = """
-                npm install
-            """.trimIndent()
+            name = "Install Dependencies"
+            scriptContent = "npm ci"
         }
-
         script {
             name = "Run Playwright Tests"
-            scriptContent = """
-                npx playwright install
-                npx playwright test
-            """.trimIndent()
+            scriptContent = "npx playwright test"
         }
     }
 
-    artifactRules = "playwright-report => reports"
+    artifactRules = "playwright-report => playwright-report"
 })
