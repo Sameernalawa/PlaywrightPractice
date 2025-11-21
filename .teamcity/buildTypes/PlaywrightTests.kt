@@ -6,7 +6,7 @@ class PlaywrightTests : BuildType({
     name = "Playwright Tests"
 
     vcs {
-        root(DslContext.settingsRoot)
+        root(DslContext.settingsRoot("https://github.com/Sameernalawa/PlaywrightPractice.git#refs/heads/main"))
     }
 
     steps {
