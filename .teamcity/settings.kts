@@ -1,7 +1,4 @@
 import jetbrains.buildServer.configs.kotlin.*
-import jetbrains.buildServer.configs.kotlin.buildFeatures.perfmon
-import jetbrains.buildServer.configs.kotlin.buildSteps.script
-import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -28,47 +25,4 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2025.07"
 
 project {
-
-    buildType(Build)
 }
-
-object Build : BuildType({
-    name = "Build"
-
-    artifactRules = """
-        playwright-report/** => report
-        test-results/** => test-results
-    """.trimIndent()
-
-    vcs {
-        root(DslContext.settingsRoot)
-    }
-
-    steps {
-        script {
-            name = "install node modules"
-            id = "install_node_modules"
-            scriptContent = "npm install"
-        }
-        script {
-            name = "Install Playwright Browsers"
-            id = "Install_Playwright_Browsers"
-            scriptContent = "npx playwright install"
-        }
-        script {
-            name = "Run Playwright Tests"
-            id = "Run_Playwright_Tests"
-            scriptContent = "npx playwright test"
-        }
-    }
-
-    triggers {
-        vcs {
-        }
-    }
-
-    features {
-        perfmon {
-        }
-    }
-})
