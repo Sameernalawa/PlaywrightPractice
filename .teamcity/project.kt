@@ -1,3 +1,4 @@
+//comment
 import jetbrains.buildServer.configs.kotlin.*
 import buildTypes.PlaywrightTests
 

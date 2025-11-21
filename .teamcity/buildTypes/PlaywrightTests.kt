@@ -1,3 +1,4 @@
+//comment
 package buildTypes
 
 import jetbrains.buildServer.configs.kotlin.*
