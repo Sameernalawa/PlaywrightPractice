@@ -7,9 +7,9 @@ class PlaywrightTests : BuildType({
 
     // Optional: attach a VCS root if already created in TeamCity
     // Replace "PlaywrightPractice_GitHub" with your actual VCS root name
-    vcs {
-        root(DslContext.createVcsRoot("https://github.com/Sameernalawa/PlaywrightPractice.git"))
-    }
+    //vcs {
+      //  root(DslContext.createVcsRoot("https://github.com/Sameernalawa/PlaywrightPractice.git"))
+    //}
 
     steps {
         script {
