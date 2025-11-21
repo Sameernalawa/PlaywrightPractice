@@ -1,9 +1,9 @@
 import jetbrains.buildServer.configs.kotlin.*
-import jetbrains.buildServer.configs.kotlin.Project
-import jetbrains.buildServer.configs.kotlin.buildType   // <-- THIS WAS MISSING
+import jetbrains.buildServer.configs.kotlin.projectFeatures.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.*
 
-object PlaywrightProject : Project({
-    name = "PlaywrightPractice"
+version = "2024.03"
 
-    buildType(PlaywrightTests)   // <-- needs the import above
-})
+project {
+    buildType(PlaywrightTests)
+}
