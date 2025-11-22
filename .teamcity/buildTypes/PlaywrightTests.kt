@@ -41,7 +41,6 @@ object PlaywrightTests : BuildType({
         script {
             name = "Run Playwright Tests"
             scriptContent = """
-            cd PlaywrightPractice
             npx playwright test --reporter=line
 
         """
