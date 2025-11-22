@@ -11,11 +11,7 @@ object PlaywrightTests : BuildType({
         checkoutMode = CheckoutMode.ON_AGENT
     }
 
-    triggers {
-        vcs {
-            branchFilter = "+:*"
-        }
-    }
+  
 
     steps {
         script {
