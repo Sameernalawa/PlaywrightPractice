@@ -6,11 +6,9 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 object PlaywrightTests : BuildType({
     name = "Playwright Tests"
 
-    triggers{
     vcs {
         root(DslContext.settingsRoot)
         checkoutMode = CheckoutMode.ON_AGENT
-    }
     }
 
     triggers {
