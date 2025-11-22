@@ -7,6 +7,7 @@ object PlaywrightTests : BuildType({
     name = "Playwright Tests"
 
     vcs {
+        root(DslContext.settingsRoot)
         checkoutMode = CheckoutMode.ON_AGENT
     }
 
