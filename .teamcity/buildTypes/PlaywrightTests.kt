@@ -1,24 +1,21 @@
 package buildTypes
 
-import jetbrains.buildServer.configs.kotlin.*
-import jetbrains.buildServer.configs.kotlin.buildSteps.script
+import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 
 object PlaywrightTests : BuildType({
     name = "Playwright Tests"
 
     steps {
         script {
-            name = "Install Dependencies"
-            scriptContent = "npm install"
-        }
-        script {
-            name = "Run Playwright Tests"
+            name = "Install & Test"
             scriptContent = """
+                npm install
                 npx playwright install
                 npx playwright test
-            """.trimIndent()
+            """
         }
     }
 
-    artifactRules = "playwright-report => reports"
+    artifactRules = "playwright-report/** => report.zip"
 })
