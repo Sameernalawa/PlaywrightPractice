@@ -3,6 +3,7 @@ package buildTypes
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 
+
 object PlaywrightTests : BuildType({
     name = "Playwright Tests"
 
