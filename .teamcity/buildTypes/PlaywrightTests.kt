@@ -6,6 +6,11 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 object PlaywrightTests : BuildType({
     name = "Playwright Tests"
 
+    vcs {
+        root(DslContext.settingsRoot)
+        checkoutMode = CheckoutMode.ON_AGENT
+    }
+
     triggers {
         vcs {
             branchFilter = "+:*"
@@ -16,6 +21,9 @@ object PlaywrightTests : BuildType({
         script {
             name = "Install Dependencies"
             scriptContent = """
+                echo "=== CHECKING FILES BEFORE INSTALL ==="
+                ls -R .
+
                 npm install
                 npx playwright install --with-deps
             """.trimIndent()
@@ -24,6 +32,9 @@ object PlaywrightTests : BuildType({
         script {
             name = "Run Playwright Tests"
             scriptContent = """
+                echo "=== CHECKING FILES BEFORE TEST ==="
+                ls -R .
+
                 npx playwright test
             """.trimIndent()
         }
