@@ -40,10 +40,10 @@ object PlaywrightTests : BuildType({
 
         script {
             name = "Run Playwright Tests"
-            workingDir = "%teamcity.build.checkoutDir%"
             scriptContent = """
-                npx playwright test
-            """.trimIndent()
+            cd tests
+            npx playwright test ../tests --reporter=line
+        """
         }
     }
 
