@@ -7,7 +7,7 @@ test("Login page real site automation", async ({ page }) => {
   await expect(page).toHaveTitle(/LoginPage Practise/);
 
   // Step 2: Fill username and password using helper
-  await Utils.fillInput(page.locator("#username"), "rahulshettyacademy");
+  await Utils.fillInput(page.locator("#usernam"), "rahulshettyacademy");
   await Utils.fillInput(page.locator("#password"), "learning");
 
   // Step 3: Select dropdown (static dropdown)
