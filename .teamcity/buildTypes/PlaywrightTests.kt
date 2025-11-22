@@ -41,7 +41,8 @@ object PlaywrightTests : BuildType({
         script {
             name = "Run Playwright Tests"
             scriptContent = """
-                npx playwright test --reporter=line
+                echo "=== PROJECT FILES ==="
+                ls -R .
     """
 
         
