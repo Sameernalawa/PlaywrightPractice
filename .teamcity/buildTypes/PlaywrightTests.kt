@@ -6,32 +6,20 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 object PlaywrightTests : BuildType({
     name = "Playwright Tests"
 
+    vcs {
+        root(PlaywrightPractice_HttpsGithubComSameernalawaPlaywrightPractice)
+        checkoutMode = CheckoutMode.ON_AGENT
+        checkoutPolicy = CheckoutPolicy.AUTO
+        checkoutRules = "+:. => ."
+    }
+
     steps {
+
         script {
             name = "Install Dependencies"
             scriptContent = """
-                apt-get update
-                apt-get install -y \
-                    libgtk-3-0 \
-                    libgtk-4-1 \
-                    libgbm-dev \
-                    libnss3 \
-                    libasound2 \
-                    libxshmfence1 \
-                    libx11-xcb1 \
-                    libxcomposite1 \
-                    libxdamage1 \
-                    libxfixes3 \
-                    libxrandr2 \
-                    libxtst6 \
-                    libatk1.0-0 \
-                    libatk-bridge2.0-0 \
-                    libatspi2.0-0 \
-                    libvpx7 \
-                    libopus0 \
-                    gstreamer1.0-plugins-base \
-                    gstreamer1.0-plugins-good \
-                    gstreamer1.0-libav
+                echo "=== CHECKING FILES ==="
+                ls -R .
 
                 npm install
                 npx playwright install --with-deps
@@ -41,11 +29,11 @@ object PlaywrightTests : BuildType({
         script {
             name = "Run Playwright Tests"
             scriptContent = """
-                echo "=== PROJECT FILES ==="
+                echo "=== RUNNING TESTS ==="
                 ls -R .
-    """
 
-        
+                npx playwright test tests
+            """.trimIndent()
         }
     }
 
