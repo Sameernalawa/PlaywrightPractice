@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 
 test("Open Home Page And Verify Title", async({page})=>{
     await page.goto("https://www.plus.fifa.com/en/?gl=in");
-    await expect (page).toHaveTitle('FIFA+');
+    await expect (page).toHaveTitle("FIFA+ / Stream live football, FIFA World Cup archive & movies");
 
 })
 
