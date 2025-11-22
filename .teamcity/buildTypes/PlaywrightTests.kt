@@ -1,6 +1,7 @@
 package buildTypes
 
-import jetbrains.buildServer.configs.kotlin.v2025_07.*
+import jetbrains.buildServer.configs.kotlin.*
+
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
 
 class PlaywrightTests : BuildType({
