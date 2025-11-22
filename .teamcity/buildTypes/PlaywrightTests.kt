@@ -7,18 +7,14 @@ object PlaywrightTests : BuildType({
     name = "Playwright Tests"
 
     vcs {
-        root(PlaywrightPractice_HttpsGithubComSameernalawaPlaywrightPractice)
         checkoutMode = CheckoutMode.ON_AGENT
-        checkoutPolicy = CheckoutPolicy.AUTO
-        checkoutRules = "+:. => ."
     }
 
     steps {
-
         script {
             name = "Install Dependencies"
             scriptContent = """
-                echo "=== CHECKING FILES ==="
+                echo "=== CHECKING FILES BEFORE INSTALL ==="
                 ls -R .
 
                 npm install
@@ -29,10 +25,10 @@ object PlaywrightTests : BuildType({
         script {
             name = "Run Playwright Tests"
             scriptContent = """
-                echo "=== RUNNING TESTS ==="
+                echo "=== CHECKING FILES BEFORE TEST ==="
                 ls -R .
 
-                npx playwright test tests
+                npx playwright test
             """.trimIndent()
         }
     }
