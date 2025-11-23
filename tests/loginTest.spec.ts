@@ -19,7 +19,7 @@ test("Login page real site automation", async ({ page }) => {
   await page.locator("#okayBtn").click();
 
   // Step 5: Click Sign in
-  await Utils.clickElement(page.locator("#signInBtn"));
+  await Utils.clickElement(page.locator("#signInBt"));
 
   // Step 6: Wait and verify navigation
   await Utils.verifyUrlContains(page, "angularpractice");
