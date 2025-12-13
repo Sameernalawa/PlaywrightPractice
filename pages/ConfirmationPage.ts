@@ -23,8 +23,15 @@ export class ConfirmationPage {
         this.successmessage = page.locator(".sweet-alert h2")
     }
 
+    
+
+    
+
     async fillform(name:string,country:string,city:string,creditcart:string,month:string,year:string) {
+       
         
+       
+
         await this.name.fill(name);
         await this.country.fill(country);
         await this.city.fill(city);
