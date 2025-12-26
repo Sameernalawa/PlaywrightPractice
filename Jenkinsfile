@@ -1,15 +1,18 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'NodeJS'   // Jenkins → Global Tool Configuration
-    }
-
     stages {
 
         stage('Checkout') {
             steps {
                 checkout scm
+            }
+        }
+
+        stage('Verify Node') {
+            steps {
+                bat 'node -v'
+                bat 'npm -v'
             }
         }
 
@@ -21,7 +24,7 @@ pipeline {
 
         stage('Install Playwright Browsers') {
             steps {
-                bat 'npx playwright install --with-deps'
+                bat 'npx playwright install'
             }
         }
 
@@ -36,23 +39,9 @@ pipeline {
                 publishHTML([
                     reportDir: 'playwright-report',
                     reportFiles: 'index.html',
-                    reportName: 'Playwright Report',
-                    keepAll: true,
-                    alwaysLinkToLastBuild: true
+                    reportName: 'Playwright Report'
                 ])
             }
-        }
-    }
-
-    post {
-        always {
-            archiveArtifacts artifacts: 'playwright-report/**', fingerprint: true
-        }
-        failure {
-            echo 'Tests failed ❌'
-        }
-        success {
-            echo 'Tests passed ✅'
         }
     }
 }
